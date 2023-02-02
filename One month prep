@@ -1,1 +1,59 @@
+WEEK1
+1)PLUS MINUS
 
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def plusMinus(arr):
+    # Write your code here
+    pcount,ncount,count=0,0,0
+    for i in range(len(arr)):
+        if arr[i]>0:
+            pcount=pcount+1
+        elif arr[i]<0:
+            ncount=ncount+1
+        else:
+            count=count+1
+    print("{:.6f}".format(pcount/len(arr)))
+    print("{:.6f}".format(ncount/len(arr)))
+    print("{:.6f}".format(count/len(arr)))
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2)MINI MAX SUM
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def miniMaxSum(arr):
+    # Write your code here
+    arr.sort()
+    sum=0
+    sum1=0
+    for i in range(4):
+        sum=sum+arr[i]
+    for i in range(1,5):
+        sum1=sum1+arr[i]
+    print(sum,sum1)
+        
+
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
