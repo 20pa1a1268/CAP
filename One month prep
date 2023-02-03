@@ -197,5 +197,47 @@ t = input()
 print(strings_xor(s, t))
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+7)TIME CONVERSION
 
+#!/bin/python3
 
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    b=s[:-2]
+    a=b[:2]
+    c1=int(a)
+    if "PM" in s:
+        if c1==12:
+            return b
+        a1=12+c1
+        d=b.replace(a,str(a1))
+        return d
+    elif "AM" in s:
+        if c1==12:
+            d=b.replace(a,"00")
+            return d
+        else:
+            return b
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+---------------------------------------------------------------------------------------------------------------------------------------------------------
