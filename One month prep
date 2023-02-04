@@ -475,12 +475,7 @@ def sockMerchant(n, ar):
             count=count+i//2
     return count
         
-        
-        
-        
-       
-    
-if __name__ == '__main__':
+ if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input().strip())
