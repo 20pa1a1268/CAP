@@ -419,8 +419,58 @@ if __name__ == '__main__':
 
     fptr.close()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12)FLIPPING BITS
 
-12)FIND MEDIAN
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'flippingBits' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts LONG_INTEGER n as parameter.
+#
+
+def flippingBits(n):
+    # Write your code here
+    s=""
+    while(n>=1):
+         s=s+str(n%2)
+         n=n//2
+    while(len(s)<32):
+             s=s+'0'
+    a=s[::-1]
+    res=""
+    for i in a:
+        if i=='1':
+            res=res+'0'
+        elif i=='0':
+            res=res+'1'
+    k=list(res) 
+    b=[int(i) for i in k] 
+    for i in range(32):
+        b[i]=b[i]*(2**(31-i))
+    return sum(b)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        n = int(input().strip())
+
+        result = flippingBits(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+13)FIND MEDIAN
 
 def findMedian(arr):
  arr.sort()
@@ -429,7 +479,7 @@ def findMedian(arr):
  return arr[median]
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-13)FLIPPING MATRIX
+14)FLIPPING MATRIX
 
 def flippingMatrix(matrix):
  # Write your code here
@@ -516,6 +566,8 @@ for cs in range (test_cases):
     n = int(input())
     a = list(map(int, input().split()))
     findZigZagSequence(a, n)
+    
+    -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
