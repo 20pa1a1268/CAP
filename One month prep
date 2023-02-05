@@ -871,3 +871,55 @@ if __name__ == '__main__':
     
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9)SHERLOCK AND ARRAY
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'balancedSums' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def balancedSums(arr):
+    # Write your code here
+    i=0
+    j=n-1
+    lsum=arr[i]
+    rsum=arr[j]
+    while(i!=j):
+        if lsum<rsum:
+            i+=1
+            lsum=lsum+arr[i]
+        else:
+            j-=1
+            rsum=rsum+arr[j]
+    if lsum==rsum:
+        return "YES"
+    else:
+        return "NO"
+            
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    T = int(input().strip())
+
+    for T_itr in range(T):
+        n = int(input().strip())
+
+        arr = list(map(int, input().rstrip().split()))
+
+        result = balancedSums(arr)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
