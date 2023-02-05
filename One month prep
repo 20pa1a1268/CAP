@@ -646,3 +646,59 @@ if __name__ == '__main__':
         fptr.write(str(result) + '\n')
 
     fptr.close()
+    
+5)CAESAR CIPHER
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'caesarCipher' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. STRING s
+#  2. INTEGER k
+#
+
+def caesarCipher(s, k):
+    # Write your code here
+    l=[]
+    for i in s:
+        if i in "abcdefghijklmnopqrstuvwxyz":
+            a=ord(i)+k
+            while(a>122):
+                a=a-26
+            l.append(chr(a))
+        elif i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            a=ord(i)+k
+            while(a>90):
+                a=a-26
+            l.append(chr(a))
+        else:
+            l.append(i)
+    res=""
+    for i in l:
+        res+=i
+    return res
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    s = input()
+
+    k = int(input().strip())
+
+    result = caesarCipher(s, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
