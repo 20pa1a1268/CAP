@@ -890,12 +890,12 @@ import sys
 
 def gridChallenge(grid):
     # Write your code here
-    l=[]
-    for i in grid:
-        l.append(''.join(sorted(i)))
-    for i in range(len(l)-1):
-        for j in range(len(l[0])-1):
-            if (l[i][j]>l[i+1][j]):
+    grid=[list(row) for row in grid]
+    for i in range(len(grid)):
+        grid[i].sort()
+    for i in range(len(grid[0])):
+        for j in range(len(grid)-1):
+            if not (grid[j][i]<=grid[j+1][i]):
                 return "NO"
     else:
         return "YES"
