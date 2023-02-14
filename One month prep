@@ -1106,3 +1106,117 @@ if __name__ == '__main__':
 
     fptr.close()
 ==================================================================================================================================================================================
+REGULAR 109
+
+1)TCS6
+a=int(input())
+if(a%2==0):
+    n1=1
+    n2=1
+    for i in range(6,a+1,2):
+        c=n1+n2
+        n1=n2
+        n2=c
+    print(c)
+else:
+    print(a)
+===================================================================================================================================================================
+2)sTRING PALINDROME 4
+a=input().lower()
+p=a[::-1]
+if(p==a):
+    print('Palindrome')
+else:
+    print('Not Palindrome')
+=========================================================================================================================================================
+
+3)SUPER REDUCED STRING
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'superReducedString' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def superReducedString(s):
+    # Write your code here
+    l=[]
+    for i in range (len(s)):
+        if len(l)==0 or l[-1]!=s[i]:
+            l.append(s[i])
+        else:
+            l.pop()
+    if len(l)==0:
+        return "Empty String"
+    else:
+        return "".join(l)
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = superReducedString(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+============================================================================================================================================================
+4)SIMILAR CHAR
+
+l=int(input())
+s=input()
+q=int(input())
+for i in range(q):
+    n=int(input())
+    c=s[n-1]
+    s1=s[:n-1]
+    count=s1.count(c)
+    print(count)
+ =============================================================================================================================================================================================
+5)FORM LARGEST EVEN NUMBER
+
+s=input()
+s1=""
+cout=0
+for i in s:
+    if i in "97531" and i not in s1:
+        s1+=i
+    elif i in "86420" and i not in s1:
+        s1+=i
+        cout+=1
+l=[]
+for i in s1:
+    l.append(int(i))
+l.sort(reverse=True)
+b=len(l)
+for i in range(b-1,-1,-1):
+    if l[i]%2==0:
+        a=""
+        for i in l:
+            a=a+str(i)
+        print(a)
+        break
+    elif l[i]%2!=0 and l[i-1]%2==0:
+        temp=l[i]
+        l[i]=l[i-1]
+        l[i-1]=temp
+        a=""
+        for i in l:
+            a=a+str(i)
+        print(a)
+        break
+else:
+    print(-1)
+=========================================================================================================================================================================
+    
