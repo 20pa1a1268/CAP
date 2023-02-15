@@ -1105,6 +1105,48 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+    
+========================================================================================================================================================
+MOCK TEST:
+1)PALINDROME INDEX
+def palindromeIndex(s):
+# Write your code here
+if s==s[::-1]:
+return -1
+n=len(s)
+for i in range(n//2):
+if s[i]!=s[n-1-i]:
+if s[i]==s[n-2-i]:
+return n-1-i
+elif s[i+1]==s[n-1-i]:
+return i
+=============================================================================================================================================================
+2)BETWEEN TWO SETS
+def getTotalX(a, b):
+# Write your code here
+g=b[0]
+count=0
+for i in range(len(b)):
+g1=math.gcd(g,b[i])
+g=g1
+l=a[0]
+for i in range(1,len(a)):
+l=l*arr[i]//math.gcd(l,a[i])
+for i in range(1,g+1):
+if (i%l==0 and g%i==0):
+count=count+1
+return count
+===============================================================================================================================================================
+3)ANAGRAM
+from collections import Counter
+def anagram(s)
+# Write your code here
+a=len(s)
+if a%2!=0:
+return -1
+elif a%2==0:
+s=(Counter(s[:a//2])-Counter(s[a//2:]))
+return sum(s.values()
 ==================================================================================================================================================================================
 REGULAR 109
 
